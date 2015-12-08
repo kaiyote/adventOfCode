@@ -23,7 +23,7 @@ for char, index in data
     when 'v'
       posY -= 1
       if index % 2 is 0 then santaPosY -= 1 else roboPosY -= 1
-  houses.add "#{posX},#{posY}"
-  doubleHouses.add if index % 2 is 0 then "#{santaPosX},#{santaPosY}" else "#{roboPosX},#{roboPosY}"
+  houses.add "#{posX},#{posY}" # part 1
+  doubleHouses.add if index % 2 is 0 then "#{santaPosX},#{santaPosY}" else "#{roboPosX},#{roboPosY}" # part 2
 
 console.log "Part 1: #{houses.size}", "Part 2: #{doubleHouses.size}"

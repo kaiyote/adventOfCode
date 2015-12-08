@@ -35,7 +35,7 @@ hasEyePair = (input) ->
 nice1 = 0
 nice2 = 0
 for s in data
-  nice1++ if not hasBadString(s) and hasThreeVowels(s) and hasDoubleLetter s
-  nice2++ if hasDoublePair(s) and hasEyePair s
+  nice1++ if not hasBadString(s) and hasThreeVowels(s) and hasDoubleLetter s # part 1
+  nice2++ if hasDoublePair(s) and hasEyePair s # part 2
 
 console.log "Part 1: #{nice1}", "Part 2: #{nice2}"
