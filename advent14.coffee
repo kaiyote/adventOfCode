@@ -20,6 +20,9 @@ for own key, value of reindeer
 distances = Object.keys(reindeer).map (deer) -> reindeer[deer].travelled
 part1 = Math.max distances...
 
+for own key, value of reindeer
+  value.travelled = 0
+
 for i in [0...2503]
   for own key, value of reindeer
     value.travelled += value.speed if i % (value.duration + value.rest) < value.duration
