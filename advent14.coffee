@@ -9,15 +9,27 @@ for line in data
     duration: +duration
     rest: +rest
     travelled: 0
-    left: +duration
-    flying: yes
-
-console.log reindeer
+    score: 0
 
 for own key, value of reindeer
   i = 0
   while i < 2503
-    reindeer[key].travelled += value.duration * value.speed
+    value.travelled += value.duration * value.speed
     i += value.duration + value.rest
 
-console.log reindeer
+distances = Object.keys(reindeer).map (deer) -> reindeer[deer].travelled
+part1 = Math.max distances...
+
+for i in [0...2503]
+  for own key, value of reindeer
+    value.travelled += value.speed if i % (value.duration + value.rest) < value.duration
+  distances = Object.keys(reindeer).map (deer) -> reindeer[deer].travelled
+  winner = Math.max distances...
+
+  for own key, value of reindeer
+    value.score++ if value.travelled is winner
+
+scores = Object.keys(reindeer).map (deer) -> reindeer[deer].score
+part2 = Math.max scores...
+
+console.log "Part 1: #{part1}", "Part 2: #{part2}"
